@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - OFPP | Organization For Poor People</title>
+    <link rel="icon" type="image/png" href="../public/OFPP-Logo.png">
+    <meta name="description" content="Support OFPP's mission to provide free healthcare to the underprivileged. Your donation funds free eye surgeries and medical treatments at Al Baseer Hospital.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* ====== Donate Page Specific Styles ====== */
+        .donate-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .donate-hero .hero-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 2.4rem;
+            color: white;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .donate-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: var(--font-secondary);
+        }
+        .donate-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ====== Donate Section Layout ====== */
+        .donate-section {
+            padding: 80px 0 100px;
+            background: var(--off-white);
+        }
+        .donate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        @media (max-width: 900px) {
+            .donate-grid { grid-template-columns: 1fr; gap: 40px; }
+            .donate-hero h1 { font-size: 2rem; }
+        }
+
+        /* ====== Card ====== */
+        .donate-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+        }
+        .donate-card h2 {
+            font-size: 1.6rem;
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+
+        /* ====== How To Donate Box ====== */
+        .how-to-box {
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+            border: 1px solid #e0e0e0;
+        }
+        .how-to-box h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: var(--dark);
+        }
+        .how-to-box ol {
+            padding-left: 18px;
+            display: grid;
+            gap: 10px;
+        }
+        .how-to-box ol li {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ====== Bank Account Cards ====== */
+        .bank-cards {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .bank-card {
+            background: white;
+            border-radius: 14px;
+            padding: 16px 20px;
+            border: 1px solid #e5e5e5;
+        }
+        .bank-card .bank-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .bank-card .bank-detail {
+            font-size: 0.82rem;
+            color: var(--gray);
+            margin-bottom: 4px;
+        }
+        .bank-card .bank-detail span {
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        /* ====== Amount Selection ====== */
+        .amount-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: block;
+            color: var(--dark);
+        }
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .amount-btn-new {
+            padding: 12px 10px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            background: var(--light-gray);
+            color: var(--dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: var(--font-primary);
+        }
+        .amount-btn-new:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .amount-btn-new.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(0,51,102,0.25);
+        }
+        .custom-amount-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--gray);
+        }
+        .custom-amount-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-family: var(--font-primary);
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .custom-amount-input:focus {
+            border-color: var(--primary);
+        }
+
+        /* ====== Form Fields ====== */
+        .field-group {
+            margin-bottom: 16px;
+        }
+        .field-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 7px;
+            display: block;
+            color: var(--dark);
+        }
+        .field-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            font-family: var(--font-primary);
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .field-group input:focus {
+            border-color: var(--primary);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        @media (max-width: 500px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        /* ====== Submit Button ====== */
+        .donate-submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font-primary);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .donate-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,51,102,0.35);
+        }
+
+        /* ====== Right Column: Impact ====== */
+        .impact-title {
+            font-size: 1.6rem;
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        .impact-subtitle {
+            color: var(--gray);
+            margin-bottom: 28px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .impact-items {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+        .impact-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: white;
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .impact-amount-badge {
+            min-width: 80px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 8px;
+            line-height: 1.3;
+        }
+        .impact-text {
+            font-size: 0.92rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* ====== Why Donate Box ====== */
+        .why-donate-box {
+            background: var(--light-gray);
+            border-radius: 18px;
+            padding: 28px;
+        }
+        .why-donate-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: var(--dark);
+            font-family: var(--font-secondary);
+        }
+        .why-donate-list {
+            display: grid;
+            gap: 12px;
+        }
+        .why-donate-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .why-donate-list li i {
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* ====== Toast Notification ====== */
+        .toast-notification {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background: white;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+            z-index: 9999;
+            display: none;
+            max-width: 360px;
+            border-left: 4px solid var(--primary);
+            animation: slideInRight 0.3s ease;
+        }
+        .toast-notification.show { display: block; }
+        .toast-notification h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .toast-notification p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span><i class="fas fa-phone-alt"></i> <a href="tel:+923174107981" style="color: inherit; text-decoration: none;">+92 317 4107981</a></span>
+                    <span><i class="fas fa-envelope"></i> <a href="mailto:organizationforpoorpeoples@gmail.com" style="color: inherit; text-decoration: none;">organizationforpoorpeoples@gmail.com</a></span>
+                </div>
+                <div class="top-bar-right">
+                    <a href="https://web.facebook.com/profile.php?id=61591605091909" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/organizationforpoorpeoples/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">
+                    <img src="../public/OFPP-Logo.png" alt="OFPP Logo" style="height: 60px;">
+                    <div class="logo-text" style="margin-left: 10px;">
+                        <span class="logo-main">OFPP</span>
+                        <span class="logo-sub">Organization For Poor People</span>
+                    </div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="hospital.html">Al Baseer Hospital <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="hospital.html">About Hospital</a></li>
+                            <li><a href="services.html">Our Services</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html" class="nav-donate-btn active">Donate Now</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="donate-hero">
+        <div class="container">
+            <div class="hero-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h1>Support Our Mission</h1>
+            <p>Your donation helps us provide free healthcare to thousands of patients in need. Every contribution, no matter how small, makes a real difference.</p>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="donate-section">
+        <div class="container">
+            <div class="donate-grid">
+
+                <!-- LEFT: Donation Form Card -->
+                <div class="donate-card">
+                    <h2>Make a Donation</h2>
+
+                    <!-- How to Donate -->
+                    <div class="how-to-box">
+                        <h3>How to Donate via Bank Transfer</h3>
+                        <ol>
+                            <li>Select your donation amount or enter a custom amount below.</li>
+                            <li>Transfer the amount to one of our official bank accounts.</li>
+                            <li>Fill in your details and click <strong>"Send Receipt on WhatsApp"</strong>.</li>
+                            <li>We will issue your official donation receipt from the organization.</li>
+                        </ol>
+
+                        <!-- Bank Account Cards -->
+                        <div class="bank-cards">
+                            <div class="bank-card">
+                                <div class="bank-name">Meezan Bank</div>
+                                <div class="bank-detail">Account Name: <span>Organization For Poor People</span></div>
+                                <div class="bank-detail">Account Number: <span>[XXXX-XXXX-XXXX]</span></div>
+                                <div class="bank-detail">Branch: <span>Pindi Bhattian</span></div>
+                                <div class="bank-detail">IBAN: <span>[PK00MEBL0000000000000]</span></div>
+                            </div>
+                            <div class="bank-card">
+                                <div class="bank-name">JazzCash / EasyPaisa</div>
+                                <div class="bank-detail">Account Name: <span>Organization For Poor People</span></div>
+                                <div class="bank-detail">Mobile Number: <span>+92 317 4107981</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <form id="donateForm" novalidate>
+                        <!-- Amount Selection -->
+                        <label class="amount-label">Donation Amount (PKR)</label>
+                        <div class="amount-grid">
+                            <button type="button" class="amount-btn-new" data-amount="500">500</button>
+                            <button type="button" class="amount-btn-new active" data-amount="1000">1,000</button>
+                            <button type="button" class="amount-btn-new" data-amount="2500">2,500</button>
+                            <button type="button" class="amount-btn-new" data-amount="5000">5,000</button>
+                            <button type="button" class="amount-btn-new" data-amount="10000">10,000</button>
+                            <button type="button" class="amount-btn-new" data-amount="25000">25,000</button>
+                        </div>
+                        <label class="custom-amount-label">Or Enter Custom Amount</label>
+                        <input type="number" class="custom-amount-input" id="customAmount" placeholder="Enter amount in PKR" min="1">
+
+                        <!-- Personal Info -->
+                        <div style="margin-top: 22px;">
+                            <div class="form-row">
+                                <div class="field-group">
+                                    <label for="donorName">Full Name *</label>
+                                    <input type="text" id="donorName" placeholder="Your full name" required>
+                                </div>
+                                <div class="field-group">
+                                    <label for="donorEmail">Email</label>
+                                    <input type="email" id="donorEmail" placeholder="your@email.com">
+                                </div>
+                            </div>
+                            <div class="field-group">
+                                <label for="donorPhone">Phone Number *</label>
+                                <input type="tel" id="donorPhone" placeholder="+92 3XX XXXXXXX" required>
+                            </div>
+                        </div>
+
+                        <div id="donate-error" style="display:none; background:#fff0f0; border:1px solid #e74c3c; color:#c0392b; padding:12px 16px; border-radius:10px; margin-bottom:14px; font-size:0.9rem;"></div>
+
+                        <button type="button" id="donateWhatsappBtn" class="donate-submit-btn">
+                            <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
+                            Send Receipt Request on WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- RIGHT: Impact Info -->
+                <div>
+                    <h2 class="impact-title">Your Impact</h2>
+                    <p class="impact-subtitle">Every donation directly supports our free healthcare services. Here's how your contribution helps the most deserving people:</p>
+
+                    <div class="impact-items">
+                        <div class="impact-item">
+                            <div class="impact-amount-badge">PKR<br>500</div>
+                            <p class="impact-text">Provides free eye checkup for 5 patients in need</p>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-amount-badge">PKR<br>1,000</div>
+                            <p class="impact-text">Supports one cataract surgery for a poor patient</p>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-amount-badge">PKR<br>5,000</div>
+                            <p class="impact-text">Funds a free eye camp for 50 deserving patients</p>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-amount-badge">PKR<br>10,000</div>
+                            <p class="impact-text">Provides a full month of free medicines to a family</p>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-amount-badge">PKR<br>30,000</div>
+                            <p class="impact-text">Covers one complete cataract surgery including post-op care</p>
+                        </div>
+                    </div>
+
+                    <div class="why-donate-box">
+                        <h3>Why Donate to OFPP?</h3>
+                        <ul class="why-donate-list">
+                            <li><i class="fas fa-check-circle"></i> 100% of donations go directly to patient care</li>
+                            <li><i class="fas fa-check-circle"></i> Registered charitable organization</li>
+                            <li><i class="fas fa-check-circle"></i> Serving thousands of patients for free</li>
+                            <li><i class="fas fa-check-circle"></i> Free eye surgeries performed every year</li>
+                            <li><i class="fas fa-check-circle"></i> Free eye camps organized across the region</li>
+                            <li><i class="fas fa-check-circle"></i> 100% transparent financial reporting</li>
+                            <li><i class="fas fa-check-circle"></i> Admin costs covered by our founding members</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toast">
+        <h4 id="toastTitle">Redirecting to WhatsApp...</h4>
+        <p id="toastMsg">Please complete your bank transfer and send the transaction receipt via WhatsApp to receive your official donation acknowledgement.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../public/OFPP-Logo.png" alt="OFPP Logo" style="height: 60px;">
+                    <div class="logo-text" style="margin-left: 10px;">
+                        <span class="logo-main">OFPP</span>
+                        <span class="logo-sub">Organization For Poor People</span>
+                    </div>
+                    </div>
+                    <p>Every donation helps us provide free healthcare to those who need it most. Thank you for your generosity.</p>
+                    <div class="footer-social">
+                        <a href="https://web.facebook.com/profile.php?id=61591605091909" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/organizationforpoorpeoples/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About OFPP</a></li>
+                        <li><a href="hospital.html">Al Baseer Hospital</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Cataract Surgery</a></li>
+                        <li><a href="services.html">Glaucoma Treatment</a></li>
+                        <li><a href="services.html">Retinal Care</a></li>
+                        <li><a href="services.html">General Medicine</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span><a href="tel:+923174107981" style="color: inherit; text-decoration: none;">+92 317 4107981</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:organizationforpoorpeoples@gmail.com" style="color: inherit; text-decoration: none;">organizationforpoorpeoples@gmail.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Organization For Poor People (OFPP). All Rights Reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <a href="https://wa.me/923174107981?text=Hello%20Organization%20For%20Poor%20People%20%28OFPP%29%21%20I%20would%20like%20to%20learn%20more%20about%20your%20charitable%20causes%20and%20how%20I%20can%20help%20or%20donate%20to%20support%20your%20mission." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="../js/main.js"></script>
+    <script>
+    window.onload = function() {
+        var selAmt = null;
+        var btns = document.querySelectorAll('.amount-btn-new');
+        var custInput = document.getElementById('customAmount');
+        var errBox = document.getElementById('donate-error');
+        var waBtn = document.getElementById('donateWhatsappBtn');
+
+        if (!waBtn) { console.error('waBtn not found'); return; }
+
+        // Clear any pre-selected amount
+        btns.forEach(function(b) { b.classList.remove('active'); });
+
+        // Amount button clicks
+        btns.forEach(function(btn) {
+            btn.onclick = function() {
+                btns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                selAmt = parseInt(btn.getAttribute('data-amount'));
+                custInput.value = '';
+                errBox.style.display = 'none';
+            };
+        });
+
+        // Custom input
+        custInput.oninput = function() {
+            btns.forEach(function(b) { b.classList.remove('active'); });
+            selAmt = null;
+            errBox.style.display = 'none';
+        };
+
+        // WhatsApp button
+        waBtn.onclick = function() {
+            errBox.style.display = 'none';
+
+            var amount = selAmt;
+            if (!amount) {
+                var cv = parseInt(custInput.value);
+                if (cv > 0) amount = cv;
+            }
+
+            var name  = document.getElementById('donorName').value.trim();
+            var email = document.getElementById('donorEmail').value.trim();
+            var phone = document.getElementById('donorPhone').value.trim();
+
+            if (!amount || amount <= 0) {
+                errBox.textContent = '⚠ Please select or enter a donation amount.';
+                errBox.style.display = 'block';
+                return;
+            }
+            if (!name) {
+                errBox.textContent = '⚠ Full Name is required.';
+                errBox.style.display = 'block';
+                return;
+            }
+            if (!phone) {
+                errBox.textContent = '⚠ Phone Number is required.';
+                errBox.style.display = 'block';
+                return;
+            }
+
+            var msg = 'Hello OFPP Team! Assalam o Alaikum,\n\n'
+                + 'I would like to donate to Organization For Poor People (OFPP) and request an official receipt.\n\n'
+                + 'Donor Details:\n'
+                + 'Name: ' + name + '\n'
+                + 'Email: ' + (email || 'Not provided') + '\n'
+                + 'Phone: ' + phone + '\n'
+                + 'Donation Amount: PKR ' + amount.toLocaleString() + '\n\n'
+                + 'I will send my transaction screenshot on WhatsApp after the transfer.\n'
+                + 'Kindly issue my official donation acknowledgement.\n\n'
+                + 'JazakAllah Khair!';
+
+            window.open('https://wa.me/923174107981?text=' + encodeURIComponent(msg), '_blank');
+
+            waBtn.innerHTML = '<i class="fas fa-check-circle"></i>&nbsp; Thank You! WhatsApp is Opening...';
+            waBtn.style.background = 'linear-gradient(135deg,#25D366,#128C7E)';
+            waBtn.disabled = true;
+
+            setTimeout(function() {
+                waBtn.innerHTML = '<i class="fab fa-whatsapp" style="font-size:1.2rem;"></i>&nbsp; Send Receipt Request on WhatsApp';
+                waBtn.style.background = '';
+                waBtn.disabled = false;
+                document.getElementById('donorName').value = '';
+                document.getElementById('donorEmail').value = '';
+                document.getElementById('donorPhone').value = '';
+                custInput.value = '';
+                btns.forEach(function(b) { b.classList.remove('active'); });
+                selAmt = null;
+            }, 3000);
+        };
+    };
+    </script>
+
+        // Set first button as NOT active by default — user must choose
+        amountBtns.forEach(function(b) { b.classList.remove('active'); });
+
+        amountBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                amountBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                selectedAmount = parseInt(btn.getAttribute('data-amount'));
+                customAmountInput.value = '';
+                hideError();
+            });
+        });
+
+        customAmountInput.addEventListener('input', function() {
+            amountBtns.forEach(function(b) { b.classList.remove('active'); });
+            selectedAmount = null;
+            hideError();
+        });
+
+        function showError(msg) {
+            errorDiv.textContent = '⚠ ' + msg;
+            errorDiv.style.display = 'block';
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function hideError() {
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+        }
+
+        // ====== Button Click — direct handler, no form submit involved ======
+        submitBtn.addEventListener('click', function() {
+            hideError();
+
+            var amount = selectedAmount;
+            if (!amount || amount <= 0) {
+                var custom = parseInt(customAmountInput.value);
+                if (custom && custom > 0) {
+                    amount = custom;
+                }
+            }
+
+            var name  = document.getElementById('donorName').value.trim();
+            var email = document.getElementById('donorEmail').value.trim();
+            var phone = document.getElementById('donorPhone').value.trim();
+
+            // ---- Validation ----
+            if (!amount || amount <= 0) {
+                showError('Please select or enter a donation amount before continuing.');
+                return;
+            }
+            if (!name) {
+                showError('Full Name is required. Please enter your name.');
+                return;
+            }
+            if (!phone) {
+                showError('Phone Number is required. Please enter your phone number.');
+                return;
+            }
+
+            // ---- Build WhatsApp Message ----
+            var msg = 'Hello OFPP Team! Assalam o Alaikum,\n\n'
+                + 'I would like to make a donation to Organization For Poor People (OFPP) and request an official receipt.\n\n'
+                + 'Donor Details:\n'
+                + 'Name: ' + name + '\n'
+                + 'Email: ' + (email ? email : 'Not provided') + '\n'
+                + 'Phone: ' + phone + '\n'
+                + 'Donation Amount: PKR ' + amount.toLocaleString() + '\n\n'
+                + 'I will send my bank/JazzCash/EasyPaisa transaction screenshot on WhatsApp after the transfer.\n'
+                + 'Kindly issue my official donation acknowledgement.\n\n'
+                + 'JazakAllah Khair!';
+
+            var waURL = 'https://wa.me/923174107981?text=' + encodeURIComponent(msg);
+
+            // ---- Open WhatsApp ----
+            window.open(waURL, '_blank');
+
+            // ---- Success State ----
+            submitBtn.innerHTML = '<i class="fas fa-check-circle" style="font-size:1.2rem;"></i>&nbsp; Thank You! WhatsApp is Opening...';
+            submitBtn.style.background = 'linear-gradient(135deg, #25D366, #128C7E)';
+            submitBtn.disabled = true;
+
+            // ---- Reset after 3 seconds ----
+            setTimeout(function() {
+                submitBtn.innerHTML = '<i class="fab fa-whatsapp" style="font-size:1.2rem;"></i>&nbsp; Send Receipt Request on WhatsApp';
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+                document.getElementById('donorName').value = '';
+                document.getElementById('donorEmail').value = '';
+                document.getElementById('donorPhone').value = '';
+                customAmountInput.value = '';
+                amountBtns.forEach(function(b) { b.classList.remove('active'); });
+                selectedAmount = null;
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

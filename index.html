@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFPP - Organization For Poor People | Serving Humanity</title>
+    <link rel="icon" type="image/png" href="public/OFPP-Logo.png">
+    <meta name="description" content="Organization For Poor People (OFPP) - A charitable organization dedicated to helping underprivileged communities through healthcare, education, and welfare programs. Home of Al Baseer Hospital.">
+    <meta name="keywords" content="OFPP, Organization For Poor People, charity, Al Baseer Hospital, eye care, healthcare, poor people, donate, help">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="eye-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <p>OFPP</p>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span><i class="fas fa-phone-alt"></i> <a href="tel:+923174107981" style="color: inherit; text-decoration: none;">+92 317 4107981</a></span>
+                    <span><i class="fas fa-envelope"></i> <a href="mailto:organizationforpoorpeoples@gmail.com" style="color: inherit; text-decoration: none;">organizationforpoorpeoples@gmail.com</a></span>
+                    
+                </div>
+                <div class="top-bar-right">
+                    <a href="https://web.facebook.com/profile.php?id=61591605091909" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/organizationforpoorpeoples/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/923174107981?text=Hello%20Organization%20For%20Poor%20People%20%28OFPP%29%21%20I%20would%20like%20to%20learn%20more%20about%20your%20charitable%20causes%20and%20how%20I%20can%20help%20or%20donate%20to%20support%20your%20mission." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="public/OFPP-Logo.png" alt="OFPP Logo" style="height: 60px;">
+                    <div class="logo-text" style="margin-left: 10px;">
+                        <span class="logo-main">OFPP</span>
+                        <span class="logo-sub">Organization For Poor People</span>
+                    </div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="pages/hospital.html">Al Baseer Hospital <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/hospital.html">About Hospital</a></li>
+                            <li><a href="pages/services.html">Our Services</a></li>
+                            <li><a href="pages/services.html#eye-care">Eye Care Center</a></li>
+                            <li><a href="pages/doctors.html">Our Doctors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/services.html">Services</a></li>
+                    <li><a href="pages/gallery.html">Gallery</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                    <li><a href="pages/donate.html" class="nav-donate-btn">Donate Now</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-slider">
+            
+            <div class="hero-slide active" id="slide1">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Welcome to OFPP</span>
+                        <h1>Serving Humanity<br><span>With Compassion</span></h1>
+                        <p>Organization For Poor People is a mission-driven initiative founded by a group of compassionate friends to uplift underprivileged communities through healthcare, welfare, and hope.</p>
+                        <div class="hero-buttons">
+                            <a href="pages/about.html" class="btn btn-primary">Learn More <i class="fas fa-arrow-right"></i></a>
+                            <a href="pages/donate.html" class="btn btn-secondary">Donate Now <i class="fas fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" id="slide2">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Al Baseer Hospital</span>
+                        <h1>Restoring Vision<br><span>Changing Lives</span></h1>
+                        <p>Our flagship hospital specializes in comprehensive eye care and healthcare services for those who cannot afford treatment. Every person deserves to see the beauty of this world.</p>
+                        <div class="hero-buttons">
+                            <a href="pages/hospital.html" class="btn btn-primary">Visit Hospital <i class="fas fa-arrow-right"></i></a>
+                            <a href="pages/services.html" class="btn btn-secondary">Our Services <i class="fas fa-stethoscope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" id="slide3">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Join Our Mission</span>
+                        <h1>Together We Can<br><span>Make A Difference</span></h1>
+                        <p>Your generous contributions help us provide free eye surgeries, medical checkups, and essential healthcare to thousands of deserving patients every year.</p>
+                        <div class="hero-buttons">
+                            <a href="pages/donate.html" class="btn btn-primary">Support Us <i class="fas fa-hand-holding-heart"></i></a>
+                            <a href="pages/contact.html" class="btn btn-secondary">Get Involved <i class="fas fa-users"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" id="slide4">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Healthcare for All</span>
+                        <h1>Quality Care<br><span>Within Reach</span></h1>
+                        <p>We believe that high-quality healthcare is a fundamental human right. Our facilities provide state-of-the-art treatments to marginalized communities.</p>
+                        <div class="hero-buttons">
+                            <a href="pages/services.html" class="btn btn-primary">Discover Services <i class="fas fa-stethoscope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" id="slide5">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Empowering Communities</span>
+                        <h1>Building Hope<br><span>For Tomorrow</span></h1>
+                        <p>Beyond healthcare, we are committed to sustainable community development, empowering individuals to break the cycle of poverty.</p>
+                        <div class="hero-buttons">
+                            <a href="pages/about.html" class="btn btn-primary">Read Our Story <i class="fas fa-book-open"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+        <div class="hero-controls">
+            <button class="hero-prev" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="hero-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+            </div>
+
+            <button class="hero-next" id="heroNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="hero-scroll-down">
+            <a href="#about-intro"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="quick-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-injured"></i></div>
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">Patients Treated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">Eye Surgeries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Expert Doctors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Volunteers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Introduction -->
+    <section class="about-intro" id="about-intro">
+        <div class="container">
+            <div class="about-intro-grid">
+                <div class="about-intro-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-hands-holding-heart"></i>
+                        <span>OFPP - Serving Since Day One</span>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="years">10+</span>
+                        <span class="text">Years of<br>Service</span>
+                    </div>
+                </div>
+                <div class="about-intro-content">
+                    <span class="section-tag">Who We Are</span>
+                    <h2 class="section-title">A Mission Born From<br><span>Friendship & Compassion</span></h2>
+                    <p class="lead-text">Organization For Poor People (OFPP) was established by a group of successful and well-settled friends who shared a common dream &mdash; to make quality healthcare accessible to every human being, regardless of their financial situation.</p>
+                    <p>What started as a heartfelt conversation among friends has grown into a powerful movement that touches thousands of lives. Our founders, blessed with resources and driven by empathy, decided to channel their success into serving those who need it most.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free Healthcare for the Underprivileged</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Specialized Eye Care & Surgery</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Community Welfare Programs</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Transparent & Accountable Operations</span>
+                        </div>
+                    </div>
+                    <a href="pages/about.html" class="btn btn-primary">Read Our Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Al Baseer Hospital Section -->
+    <section class="hospital-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">Our Flagship Initiative</span>
+                <h2 class="section-title">Al Baseer Hospital</h2>
+                <p class="section-desc">Specialized in comprehensive healthcare and eye care services, Al Baseer Hospital is OFPP's first and proudest achievement &mdash; a beacon of hope for those who cannot afford medical treatment.</p>
+            </div>
+            <div class="hospital-features-grid">
+                <div class="hospital-card main-card">
+                    <div class="hospital-card-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>About Al Baseer Hospital</h3>
+                    <p>Al Baseer Hospital, accessible at <strong>albaseerhospital.com</strong>, is a state-of-the-art healthcare facility that provides world-class medical services with a special focus on ophthalmology and eye care. The name "Al Baseer" means "The All-Seeing" &mdash; reflecting our mission to restore sight and provide vision care to thousands.</p>
+                    <a href="pages/hospital.html" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hospital-card">
+                    <div class="hospital-card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Eye Care Excellence</h3>
+                    <p>Our specialized eye care department offers cataract surgery, glaucoma treatment, retinal care, corneal transplants, and comprehensive vision screening programs.</p>
+                    <a href="pages/services.html#eye-care" class="card-link">View Services <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hospital-card">
+                    <div class="hospital-card-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>General Healthcare</h3>
+                    <p>Beyond eye care, we provide general medicine, emergency services, diagnostic labs, pharmacy, and preventive health programs for the community.</p>
+                    <a href="pages/services.html" class="card-link">View Services <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hospital-card">
+                    <div class="hospital-card-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>Free Treatment Programs</h3>
+                    <p>Through our welfare programs, we provide free eye surgeries, medical checkups, and essential treatments to patients who cannot afford healthcare costs.</p>
+                    <a href="pages/donate.html" class="card-link">Support Us <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">What We Offer</span>
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-desc">Al Baseer Hospital provides a comprehensive range of medical services with cutting-edge technology and compassionate care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Cataract Surgery</h3>
+                    <p>Advanced phacoemulsification and traditional cataract removal surgeries with premium intraocular lens implantation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-low-vision"></i>
+                    </div>
+                    <h3>Glaucoma Treatment</h3>
+                    <p>Early detection, medical management, laser therapy, and surgical interventions for all types of glaucoma.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-glasses"></i>
+                    </div>
+                    <h3>Vision Correction</h3>
+                    <p>LASIK eye surgery, corrective lens fitting, and comprehensive vision testing and prescription services.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Retinal Care</h3>
+                    <p>Diagnosis and treatment of retinal disorders including diabetic retinopathy, macular degeneration, and retinal detachment.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>General Medicine</h3>
+                    <p>Comprehensive internal medicine services, health screenings, chronic disease management, and preventive healthcare.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3>Emergency Care</h3>
+                    <p>24/7 emergency department equipped to handle medical emergencies, eye injuries, and urgent care needs.</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="pages/services.html" class="btn btn-primary">View All Services <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="impact-overlay"></div>
+        <div class="container">
+            <div class="impact-content">
+                <span class="section-tag light">Our Impact</span>
+                <h2>Every Eye We Heal,<br>Every Life We Touch</h2>
+                <p>Since our inception, Al Baseer Hospital has been at the forefront of providing free and subsidized eye care to thousands of deserving patients. Our impact continues to grow with your generous support.</p>
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <i class="fas fa-procedures"></i>
+                        <h3>15,000+</h3>
+                        <p>Free Eye Surgeries</p>
+                    </div>
+                    <div class="impact-stat">
+                        <i class="fas fa-users"></i>
+                        <h3>50,000+</h3>
+                        <p>Patients Served</p>
+                    </div>
+                    <div class="impact-stat">
+                        <i class="fas fa-campground"></i>
+                        <h3>200+</h3>
+                        <p>Medical Camps</p>
+                    </div>
+                    <div class="impact-stat">
+                        <i class="fas fa-globe-asia"></i>
+                        <h3>100+</h3>
+                        <p>Communities Reached</p>
+                    </div>
+                </div>
+                <a href="pages/donate.html" class="btn btn-secondary">Help Us Do More <i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How You Can Help -->
+    <section class="help-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">Get Involved</span>
+                <h2 class="section-title">How You Can Help</h2>
+                <p class="section-desc">There are many ways you can contribute to our mission of serving underprivileged communities.</p>
+            </div>
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <h3>Make a Donation</h3>
+                    <p>Your financial contribution directly funds free surgeries, medical supplies, and patient care for those who cannot afford treatment.</p>
+                    <a href="pages/donate.html" class="btn btn-outline">Donate Now</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Volunteer With Us</h3>
+                    <p>Join our team of dedicated volunteers. Whether you're a medical professional or a caring individual, we have a place for you.</p>
+                    <a href="pages/contact.html" class="btn btn-outline">Join Us</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Spread the Word</h3>
+                    <p>Share our mission on social media, tell your friends and family, and help us reach more people who need our services.</p>
+                    <a href="#" class="btn btn-outline">Share Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">Stories of Hope</h2>
+                <p class="section-desc">Hear from the people whose lives have been transformed through our services.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"Al Baseer Hospital gave me my sight back. I couldn't afford the surgery, but they treated me for free. Now I can see my grandchildren's faces. May Allah bless this organization."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Patient Testimonial</h4>
+                            <span>Cataract Surgery Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"As a volunteer doctor, I've seen the incredible impact OFPP has on communities. The dedication of the founders and staff is truly inspiring. They are changing lives every single day."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-md"></i></div>
+                        <div class="author-info">
+                            <h4>Volunteer Doctor</h4>
+                            <span>Ophthalmology Department</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"My entire family received free eye checkups during their medical camp in our village. Two family members got free glasses. We are forever grateful to OFPP and Al Baseer Hospital."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Community Member</h4>
+                            <span>Medical Camp Beneficiary</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="t-dot active" data-index="0"></span>
+                <span class="t-dot" data-index="1"></span>
+                <span class="t-dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Be the Reason Someone Sees Again</h2>
+                <p>A single donation can fund an eye surgery and restore someone's vision. Join us in our mission to eliminate preventable blindness.</p>
+                <div class="cta-buttons">
+                    <a href="pages/donate.html" class="btn btn-primary">Donate Now <i class="fas fa-heart"></i></a>
+                    <a href="pages/contact.html" class="btn btn-light">Contact Us <i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">Latest Updates</span>
+                <h2 class="section-title">News & Events</h2>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <div class="news-placeholder"><i class="fas fa-campground"></i></div>
+                        <span class="news-date">March 2026</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Free Eye Camp Organized</h3>
+                        <p>Al Baseer Hospital organized a free eye screening camp serving over 500 patients from rural communities with free checkups and glasses.</p>
+                        <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <div class="news-placeholder"><i class="fas fa-hospital"></i></div>
+                        <span class="news-date">February 2026</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>New Eye Surgery Wing Opened</h3>
+                        <p>We are proud to announce the opening of our new state-of-the-art eye surgery wing equipped with the latest ophthalmic technology.</p>
+                        <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <div class="news-placeholder"><i class="fas fa-award"></i></div>
+                        <span class="news-date">January 2026</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>10,000th Free Surgery Milestone</h3>
+                        <p>Al Baseer Hospital celebrates performing its 10,000th free eye surgery, marking a significant milestone in our journey of service.</p>
+                        <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">Our Partners</span>
+                <h2 class="section-title">Trusted By</h2>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-item"><i class="fas fa-hospital-alt"></i><span>Healthcare Partners</span></div>
+                <div class="partner-item"><i class="fas fa-university"></i><span>Government Bodies</span></div>
+                <div class="partner-item"><i class="fas fa-handshake"></i><span>NGO Partners</span></div>
+                <div class="partner-item"><i class="fas fa-building"></i><span>Corporate Sponsors</span></div>
+                <div class="partner-item"><i class="fas fa-globe"></i><span>International Orgs</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="public/OFPP-Logo.png" alt="OFPP Logo" style="height: 60px;">
+                    <div class="logo-text" style="margin-left: 10px;">
+                        <span class="logo-main">OFPP</span>
+                        <span class="logo-sub">Organization For Poor People</span>
+                    </div>
+                    </div>
+                    <p>Founded by a compassionate group of friends, OFPP is dedicated to providing healthcare and welfare services to underprivileged communities. Al Baseer Hospital is our first step towards a healthier world.</p>
+                    <div class="footer-social">
+                        <a href="https://web.facebook.com/profile.php?id=61591605091909" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/organizationforpoorpeoples/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/923174107981?text=Hello%20Organization%20For%20Poor%20People%20%28OFPP%29%21%20I%20would%20like%20to%20learn%20more%20about%20your%20charitable%20causes%20and%20how%20I%20can%20help%20or%20donate%20to%20support%20your%20mission." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About OFPP</a></li>
+                        <li><a href="pages/hospital.html">Al Baseer Hospital</a></li>
+                        <li><a href="pages/services.html">Our Services</a></li>
+                        <li><a href="pages/gallery.html">Gallery</a></li>
+                        <li><a href="pages/donate.html">Donate</a></li>
+                        <li><a href="pages/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="pages/services.html">Cataract Surgery</a></li>
+                        <li><a href="pages/services.html">Glaucoma Treatment</a></li>
+                        <li><a href="pages/services.html">Retinal Care</a></li>
+                        <li><a href="pages/services.html">Vision Correction</a></li>
+                        <li><a href="pages/services.html">General Medicine</a></li>
+                        <li><a href="pages/services.html">Emergency Care</a></li>
+                        <li><a href="pages/services.html">Free Eye Camps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Al Baseer Hospital,<br>Main Road, City, Country</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span><a href="tel:+923174107981" style="color: inherit; text-decoration: none;">+92 317 4107981</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>organizationforpoorpeoples@gmail.com<br>organizationforpoorpeoples@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>www.albaseerhospital.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Organization For Poor People (OFPP). All Rights Reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/923174107981?text=Hello%20Organization%20For%20Poor%20People%20%28OFPP%29%21%20I%20would%20like%20to%20learn%20more%20about%20your%20charitable%20causes%20and%20how%20I%20can%20help%20or%20donate%20to%20support%20your%20mission." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
